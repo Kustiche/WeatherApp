@@ -1,0 +1,63 @@
+@import 'libs/normalize';
+
+@font-face {
+  src: url('resources/fonts/Inter-Regular.woff2') format('woff2');
+  font-family: 'inter';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  src: url('resources/fonts/Inter-Medium.woff2') format('woff2');
+  font-family: 'inter';
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --light-color: #ffffff;
+  --hokey-color: #d69e36;
+  --anzac-color: #deab4d;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  height: 100%;
+  font-family: inter, sans-serif;
+  font-weight: 400;
+  color: var(--light-color);
+  background-color: var(--hokey-color);
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 100%;
+}
+
+.list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.btn-reset {
+  border: none;
+  padding: 0;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
