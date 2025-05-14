@@ -10,6 +10,114 @@
 </head>
 
 <body>
+  <section class="weather">
+    <div class="container">
+      <div class="weather__wrap">
+        <div class="weather__info">
+          <div class="weather__content">
+            <form class="weather__form">
+              <input class="weather__input" type="text" required placeholder="Search">
+              <button class="weather__btn btn-reset">
+                <svg class="weather__icon">
+                  <use href="resources/icons/sprite.svg#search"></use>
+                </svg>
+              </button>
+            </form>
+            <div class="weather__inner">
+              <p class="weather__city">Barnaul</p>
+              <button class="weather__btn-hearth btn-reset">
+                <svg class="weather__hearth">
+                  <use href="resources/icons/sprite.svg#hearth"></use>
+                </svg>
+              </button>
+            </div>
+            <div class="weather__degrees">
+              <div class="weather__card">
+                <p class="weather__degree">20&deg;</p>
+                <p class="weather__text">Weather now</p>
+              </div>
+              <div class="weather__card">
+                <p class="weather__degree">18&deg;</p>
+                <p class="weather__text">Feels like</p>
+              </div>
+            </div>
+          </div>
+          <img class="weather__img" src="resources/img/weather.png" alt="Clouds">
+        </div>
+        <div class="weather__additional-inner">
+          <div class="weather__additional-info">
+            <div class="weather__details details block">
+              <h2 class="details__title title">Details</h2>
+              <div class="details__cards">
+                <div class="details__card">
+                  <svg class="details__icon">
+                    <use href="resources/icons/sprite.svg#wind"></use>
+                  </svg>
+                  <div class="details__content">
+                    <h3 class="details__subtitle">11km/h</h3>
+                    <p class="details__text">Wind speed</p>
+                  </div>
+                </div>
+                <div class="details__card">
+                  <svg class="details__icon">
+                    <use href="resources/icons/sprite.svg#humidity"></use>
+                  </svg>
+                  <div class="details__content">
+                    <h3 class="details__subtitle">31%</h3>
+                    <p class="details__text">Humidity</p>
+                  </div>
+                </div>
+                <div class="details__card">
+                  <svg class="details__icon">
+                    <use href="resources/icons/sprite.svg#sunset"></use>
+                  </svg>
+                  <div class="details__content">
+                    <h3 class="details__subtitle">18:54</h3>
+                    <p class="details__text">Sunset</p>
+                  </div>
+                </div>
+                <div class="details__card">
+                  <svg class="details__icon">
+                    <use href="resources/icons/sprite.svg#sunrise"></use>
+                  </svg>
+                  <div class="details__content">
+                    <h3 class="details__subtitle">03:21</h3>
+                    <p class="details__text">Sunrise</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="weather__forecast forecast block">
+              <h2 class="forecast__title title">Forecast</h2>
+              <div class="forecast__cards">
+                <div class="forecast__card">
+                  <div class="forecast__content">
+                    <h2 class="forecast__subtitle">25 May</h2>
+                    <p class="forecast__text">Temperature: 13&deg;</p>
+                    <p class="forecast__text">Feels like: 8&deg;</p>
+                  </div>
+                  <div class="forecast__inner">
+                    <p class="forecast__time">12:00</p>
+                    <img class="forecast__img" src="resources/img/rain.png" alt="Погода">
+                    <p class="forecast__name-weather">Rain</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="weather__favorites favorites block">
+            <h2 class="favorites__title title">Favorites</h2>
+            <ul class="favorites__list list-reset">
+              <li class="favorites__item">
+                <p class="favorites__text">Barnaul</p>
+                <button class="favorites__btn btn-reset"></button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </body>
 
 </html>

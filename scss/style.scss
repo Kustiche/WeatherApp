@@ -61,3 +61,239 @@ body {
   background-color: transparent;
   cursor: pointer;
 }
+
+.title {
+  margin: 0;
+  margin-bottom: 40px;
+}
+
+.block {
+  border-radius: 40px;
+  padding: 20px;
+  max-width: 885px;
+  width: 100%;
+  background: var(--anzac-color);
+}
+
+.weather {
+  padding: 50px 0;
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 80px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    width: 100%;
+  }
+
+  &__form {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &__input {
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    padding-right: 60px;
+    width: 100%;
+    height: 40px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    border-radius: 0 15px 15px 0;
+    width: 60px;
+    height: 40px;
+    line-height: 0;
+    transform: translateY(-50%);
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  &__inner {
+    display: flex;
+  }
+
+  &__city {
+    margin: 0;
+    font-weight: 500;
+    font-size: 24px;
+  }
+
+  &__btn-hearth {
+  }
+
+  &__hearth {
+    width: 20px;
+    height: 20px;
+  }
+
+  &__degrees {
+    display: flex;
+    gap: 15px;
+  }
+
+  &__card {
+  }
+
+  &__degree {
+  }
+
+  &__text {
+  }
+
+  &__img {
+    width: 320px;
+    height: 320px;
+  }
+
+  &__additional-inner {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__additional-info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+  }
+}
+
+.details {
+  &__title {
+  }
+
+  &__cards {
+    display: flex;
+  }
+
+  &__card {
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    width: 48px;
+    height: 37px;
+  }
+
+  &__subtitle {
+    margin: 0;
+  }
+
+  &__text {
+    margin: 0;
+  }
+}
+
+.forecast {
+  &__title {
+  }
+
+  &__cards {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__card {
+    display: flex;
+    border: 2px solid var(--light-color);
+    border-radius: 15px;
+    padding: 10px;
+    gap: 95px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__subtitle {
+    margin: 0;
+  }
+
+  &__text {
+    margin: 0;
+  }
+
+  &__inner {
+  }
+
+  &__time {
+    margin: 0;
+  }
+
+  &__img {
+  }
+
+  &__name-weather {
+    margin: 0;
+  }
+}
+.favorites {
+  max-width: 325px;
+  width: 100%;
+  &__title {
+  }
+
+  &__list {
+  }
+
+  &__item {
+    display: flex;
+    margin-bottom: 15px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    font-size: 20px;
+  }
+
+  &__btn {
+    position: relative;
+    width: 20px;
+    height: 20px;
+
+    &::after,
+    &::before {
+      position: absolute;
+      content: '';
+      width: 20px;
+      border-top: 2px solid var(--light-color);
+      top: 50%;
+      left: 0;
+      transform: rotate(45deg);
+    }
+
+    &::before {
+      transform: rotate(-45deg);
+    }
+  }
+}
