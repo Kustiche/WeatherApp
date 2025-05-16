@@ -1,4 +1,4 @@
-import { city, deegres, subtitleDetails } from './view.js';
+import { city, deegres, img, subtitleDetails } from './view.js';
 
 export function distributionInfo(data) {
   const {
@@ -6,6 +6,7 @@ export function distributionInfo(data) {
     wind: { speed },
     main: { feels_like, temp, humidity },
     sys: { sunrise, sunset },
+    weather: [weatherArray],
   } = data;
 
   const dateSunrise = new Date(sunrise * 1000);
@@ -27,6 +28,8 @@ export function distributionInfo(data) {
       el.textContent = `${Math.round(feels_like)}\°`;
     }
   });
+
+  img.src = `https://openweathermap.org/img/wn/${weatherArray.icon}@2x.png`;
 
   subtitleDetails.forEach((el) => {
     if (el.dataset.details === 'Wind') {
