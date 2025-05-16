@@ -1,7 +1,7 @@
 @import 'libs/normalize';
 
 @font-face {
-  src: url('resources/fonts/Inter-Regular.woff2') format('woff2');
+  src: url('../resources/fonts/Inter-Regular.woff2') format('woff2');
   font-family: 'inter';
   font-weight: 400;
   font-style: normal;
@@ -9,7 +9,7 @@
 }
 
 @font-face {
-  src: url('resources/fonts/Inter-Medium.woff2') format('woff2');
+  src: url('../resources/fonts/Inter-Medium.woff2') format('woff2');
   font-family: 'inter';
   font-weight: 500;
   font-style: normal;
