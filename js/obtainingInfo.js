@@ -1,9 +1,9 @@
+import { callNotification } from './callNotification.js';
 import { creatingForecast } from './creatingForecast.js';
 import { distributionInfo } from './distributionInfo.js';
+import { errorMessage } from './main.js';
 
-export function obtainingInfo(e) {
-  const input = e.target.querySelector('.weather__input');
-  const cityName = input.value;
+export function obtainingInfo(cityName) {
   const apiKey = 'e3ad590851a41683e0cf38cebb1b8c98';
 
   const serverUrl = 'https://api.openweathermap.org/data/2.5/weather?';
@@ -15,12 +15,32 @@ export function obtainingInfo(e) {
   fetch(url)
     .then((responce) => responce.json())
     .then((data) => {
+      const isError = data.cod === '404';
+
+      if (isError) {
+        throw errorMessage;
+      }
+
       distributionInfo(data);
+    })
+    .catch((err) => {
+      callNotification(`${err.name}${err.message}`);
     });
 
   fetch(urlHourly)
     .then((response) => response.json())
-    .then((data) => creatingForecast(data));
+    .then((data) => {
+      const isError = data.cod === '404';
 
-  input.value = '';
+      if (isError) {
+        throw errorMessage;
+      }
+
+      creatingForecast(data);
+    })
+    .catch(() => {
+      return;
+    });
+
+  localStorage.removeItem('inputText');
 }

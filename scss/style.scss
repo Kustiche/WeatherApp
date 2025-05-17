@@ -20,6 +20,8 @@
   --light-color: #ffffff;
   --hokey-color: #d69e36;
   --anzac-color: #deab4d;
+  --porsche-color: #a2792e;
+  --cinnabar-color: #e74c3c;
 }
 
 html {
@@ -43,9 +45,9 @@ body {
 }
 
 .container {
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 15px;
-  max-width: 100%;
 }
 
 .list-reset {
@@ -64,13 +66,13 @@ body {
 
 .title {
   margin: 0;
-  margin-bottom: 40px;
+  margin-bottom: 25px;
 }
 
 .block {
   border-radius: 40px;
   padding: 20px;
-  max-width: 885px;
+  max-width: 775px;
   width: 100%;
   background: var(--anzac-color);
 }
@@ -86,7 +88,6 @@ body {
   &__info {
     display: flex;
     justify-content: space-between;
-    padding: 0 80px;
   }
 
   &__content {
@@ -134,6 +135,9 @@ body {
 
   &__inner {
     display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
   }
 
   &__city {
@@ -143,13 +147,29 @@ body {
   }
 
   &__hearth {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
+    fill: var(--light-color);
+    transition: fill 0.4s;
+
+    &:hover {
+      fill: var(--cinnabar-color);
+    }
   }
 
   &__degrees {
     display: flex;
-    gap: 15px;
+    gap: 30px;
+  }
+
+  &__degree {
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 24px;
+  }
+
+  &__text {
+    margin: 0;
   }
 
   &__img {
@@ -173,11 +193,13 @@ body {
 .details {
   &__cards {
     display: flex;
+    gap: 30px;
   }
 
   &__card {
     display: flex;
     align-items: center;
+    gap: 10px;
   }
 
   &__icon {
@@ -195,22 +217,42 @@ body {
 }
 
 .forecast {
+  max-height: 245px;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: var(--porsche-color) #fff;
+
   &__cards {
     display: flex;
-    gap: 10px;
+    flex-wrap: wrap;
+    gap: 15px;
+    max-width: 100%;
   }
 
   &__card {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 15px;
     border: 2px solid var(--light-color);
     border-radius: 15px;
-    padding: 10px;
-    gap: 95px;
+    max-width: 355px;
+    width: 100%;
   }
 
   &__content {
     display: flex;
     flex-direction: column;
+    gap: 5px;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
   }
 
   &__subtitle {
@@ -225,16 +267,29 @@ body {
     margin: 0;
   }
 
+  &__img {
+    width: 60px;
+    height: 60px;
+  }
+
   &__name-weather {
     margin: 0;
   }
+
+  &:hover {
+    scrollbar-color: var(--porsche-color) transparent;
+  }
 }
+
 .favorites {
   max-width: 325px;
   width: 100%;
 
   &__item {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
     margin-bottom: 15px;
 
     &:last-child {
@@ -261,10 +316,36 @@ body {
       top: 50%;
       left: 0;
       transform: rotate(45deg);
+      transition: border-top-color 0.3s;
     }
 
     &::before {
       transform: rotate(-45deg);
     }
+
+    &:hover::after,
+    &:hover::before {
+      border-top-color: var(--cinnabar-color);
+    }
+  }
+}
+
+.notification {
+  position: fixed;
+  top: -50%;
+  left: 50%;
+  border-radius: 0 0 15px 15px;
+  padding: 15px;
+  background-color: var(--cinnabar-color);
+  transform: translateX(-50%);
+  transition: top 0.6s;
+
+  &.active {
+    top: 0;
+  }
+
+  &__text {
+    margin: 0;
+    font-size: 20px;
   }
 }

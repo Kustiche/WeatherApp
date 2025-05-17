@@ -9,6 +9,7 @@ export function creatingFavorites() {
     const textButton = document.createElement('button');
     const button = document.createElement('button');
 
+    listItem.className = 'favorites__item';
     textButton.className = 'favorites__text-btn btn-reset';
     textButton.textContent = cityName;
     button.className = 'favorites__btn btn-reset';

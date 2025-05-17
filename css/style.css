@@ -326,6 +326,8 @@ template {
   --light-color: #ffffff;
   --hokey-color: #d69e36;
   --anzac-color: #deab4d;
+  --porsche-color: #a2792e;
+  --cinnabar-color: #e74c3c;
 }
 
 html {
@@ -349,9 +351,9 @@ body {
 }
 
 .container {
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 15px;
-  max-width: 100%;
 }
 
 .list-reset {
@@ -370,13 +372,13 @@ body {
 
 .title {
   margin: 0;
-  margin-bottom: 40px;
+  margin-bottom: 25px;
 }
 
 .block {
   border-radius: 40px;
   padding: 20px;
-  max-width: 885px;
+  max-width: 775px;
   width: 100%;
   background: var(--anzac-color);
 }
@@ -391,7 +393,6 @@ body {
 .weather__info {
   display: flex;
   justify-content: space-between;
-  padding: 0 80px;
 }
 .weather__content {
   display: flex;
@@ -432,6 +433,9 @@ body {
 }
 .weather__inner {
   display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 .weather__city {
   margin: 0;
@@ -439,12 +443,25 @@ body {
   font-size: 24px;
 }
 .weather__hearth {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
+  fill: var(--light-color);
+  transition: fill 0.4s;
+}
+.weather__hearth:hover {
+  fill: var(--cinnabar-color);
 }
 .weather__degrees {
   display: flex;
-  gap: 15px;
+  gap: 30px;
+}
+.weather__degree {
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+.weather__text {
+  margin: 0;
 }
 .weather__img {
   width: 320px;
@@ -463,10 +480,12 @@ body {
 
 .details__cards {
   display: flex;
+  gap: 30px;
 }
 .details__card {
   display: flex;
   align-items: center;
+  gap: 10px;
 }
 .details__icon {
   width: 48px;
@@ -479,20 +498,40 @@ body {
   margin: 0;
 }
 
+.forecast {
+  max-height: 245px;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: var(--porsche-color) #fff;
+}
 .forecast__cards {
   display: flex;
-  gap: 10px;
+  flex-wrap: wrap;
+  gap: 15px;
+  max-width: 100%;
 }
 .forecast__card {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 15px;
   border: 2px solid var(--light-color);
   border-radius: 15px;
-  padding: 10px;
-  gap: 95px;
+  max-width: 355px;
+  width: 100%;
 }
 .forecast__content {
   display: flex;
   flex-direction: column;
+  gap: 5px;
+}
+.forecast__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
 }
 .forecast__subtitle {
   margin: 0;
@@ -503,8 +542,15 @@ body {
 .forecast__time {
   margin: 0;
 }
+.forecast__img {
+  width: 60px;
+  height: 60px;
+}
 .forecast__name-weather {
   margin: 0;
+}
+.forecast:hover {
+  scrollbar-color: var(--porsche-color) transparent;
 }
 
 .favorites {
@@ -513,6 +559,9 @@ body {
 }
 .favorites__item {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
   margin-bottom: 15px;
 }
 .favorites__item:last-child {
@@ -535,7 +584,29 @@ body {
   top: 50%;
   left: 0;
   transform: rotate(45deg);
+  transition: border-top-color 0.3s;
 }
 .favorites__btn::before {
   transform: rotate(-45deg);
+}
+.favorites__btn:hover::after, .favorites__btn:hover::before {
+  border-top-color: var(--cinnabar-color);
+}
+
+.notification {
+  position: fixed;
+  top: -50%;
+  left: 50%;
+  border-radius: 0 0 15px 15px;
+  padding: 15px;
+  background-color: var(--cinnabar-color);
+  transform: translateX(-50%);
+  transition: top 0.6s;
+}
+.notification.active {
+  top: 0;
+}
+.notification__text {
+  margin: 0;
+  font-size: 20px;
 }/*# sourceMappingURL=style.css.map */

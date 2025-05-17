@@ -1,7 +1,9 @@
+import { obtainingInfo } from './obtainingInfo.js';
+
 export function render(e) {
-  const isTextButton = e.classList.contains === '.favorites__text-btn';
+  const isTextButton = e.target.classList.contains('favorites__text-btn');
 
   if (isTextButton) {
-    console.log('Проверка');
+    obtainingInfo(e.target.textContent);
   }
 }
